@@ -5,8 +5,6 @@ const path = require("path");
 const config = require("config");
 var cors = require("cors");
 
-app.use(cors());
-
 var app = express();
 const port = 5000;
 
@@ -23,6 +21,9 @@ mongoose
   })
   .then(() => console.log("MongoDB Mongoose connected"))
   .catch((err) => console.log(err));
+
+
+  app.use(cors());
 
 app.use(logger("dev"));
 app.use(express.json());
