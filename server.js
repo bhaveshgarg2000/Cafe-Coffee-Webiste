@@ -3,10 +3,12 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
 const config = require("config");
-// var cors = require("cors");
+var cors = require("cors");
+
+app.use(cors());
 
 var app = express();
-const port =  5000;
+const port = 5000;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
